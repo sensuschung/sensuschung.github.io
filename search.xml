@@ -4,6 +4,68 @@
   
     
     <entry>
+      <title>NIS2334</title>
+      <link href="/2024/06/02/NIS2334/"/>
+      <url>/2024/06/02/NIS2334/</url>
+      
+        <content type="html"><![CDATA[<h2 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h2><h3 id="磁盘结构和调度"><a href="#磁盘结构和调度" class="headerlink" title="磁盘结构和调度"></a>磁盘结构和调度</h3><ul><li><p><input disabled="" type="checkbox"> 磁盘结构</p><ul><li><input disabled="" type="checkbox"> 控制器通过移动臂移动磁头读写磁道上的数据。<strong>每面</strong>都有独立的磁头</li><li><input disabled="" type="checkbox"> 柱面: 所有盘片上的<strong>相同磁道</strong>组成柱面</li></ul></li><li><p><input disabled="" type="checkbox"> <font color="#CC0000">磁盘时延</font></p><details>    <summary>具体计算</summary>    <img src="https://raw.githubusercontent.com/sensuschung/wordpress_image/master/study/NIS2336/image-20240531151357537.png" alt="1"></details></li><li><p><input disabled="" type="checkbox"> 磁道优化</p><details>    <summary>优化方案</summary>    <ul>        <li>所有磁道上的BPI 相同(“固定位密度”)</li>        <li>磁盘容量更大</li>        <li>越靠外圈的磁道包含的扇区越多</li>        <li>磁盘转速固定，外磁道的速度比内磁道</li>    </ul></details></li><li><p><input disabled="" type="checkbox"> 硬盘的使用</p><ul><li><input disabled="" type="checkbox"> 硬盘必须分区</li><li><input disabled="" type="checkbox"> 分区需用<u>某种文件系统</u>进行格式化</li><li><input disabled="" type="checkbox"> 在某些情况下，可以用快速格式化取代完全格式化</li><li><input disabled="" type="checkbox"> 为什么需要多分区</li></ul></li><li><p><input disabled="" type="checkbox"> 磁盘分布</p><ul><li><input disabled="" type="checkbox"> MBR（位置）、4个主分区、多个逻辑分区</li></ul></li><li><p><input disabled="" type="checkbox"> 减少时延的方法：<br>缓存&#x2F;RAM&#x2F;RAID&#x2F;调度算法(读写头调度-&gt;调动磁头、元信息布置-&gt;怎么储存布置文件块)</p><ul><li><p><input disabled="" type="checkbox"> </p><details>    <summary>关于高速缓存</summary>    <img src="https://raw.githubusercontent.com/sensuschung/wordpress_image/master/study/NIS2336/20240531153644.png" alt="none"></details></li><li><p><input disabled="" type="checkbox"> <font color="#CC0000">替换策略</font>：</p><ul><li><input disabled="" type="checkbox"> LRU</li><li><input disabled="" type="checkbox"> LFU</li><li><input disabled="" type="checkbox"> 基于频率的替换算法</li></ul></li><li><p>[ ]</p></li></ul></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> study </category>
+          
+          <category> class </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> review </tag>
+            
+            <tag> 2023-2024Spring </tag>
+            
+            <tag> OS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>NIS2336</title>
+      <link href="/2024/06/02/NIS2336/"/>
+      <url>/2024/06/02/NIS2336/</url>
+      
+        <content type="html"><![CDATA[<h1 id="概论"><a href="#概论" class="headerlink" title="概论"></a>概论</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><ul><li><p><input disabled="" type="checkbox"> 翻译程序</p></li><li><p><input disabled="" type="checkbox"> 编译程序</p></li><li><p><input disabled="" type="checkbox"> 编译的两大&#x2F;三大阶段及区别（编译阶段生成的目标程序）</p></li><li><p><input disabled="" type="checkbox"> 解释程序和编译程序的主要区别</p></li><li><p><input disabled="" type="checkbox"> 编译的六个阶段、前端和后端</p></li><li><p><input disabled="" type="checkbox"> 词法分析：源程序、字符串、扫描分解、单词&#x2F;单词符号&#x2F;符号</p></li><li><p><input disabled="" type="checkbox"> 语法分析：单词符号串、语法规则、识别语法单位、检查</p></li><li><p><input disabled="" type="checkbox"> 语义分析、中间代码生成：语法单位、静态语义省查、分析含义、另一种语言描述（什么语言？）</p></li><li><p><input disabled="" type="checkbox"> 代码优化：对（）进行（）改造或变换，高效，主要包括（）和（）</p></li><li><p><input disabled="" type="checkbox"> 目标代码生成：将中间代码变换成（）或（）或（）</p></li><li><p><input disabled="" type="checkbox"> 在<strong>每个</strong>过程中，涉及表格管理和错误处理：表格的构造、查找、修改、存取</p></li></ul><img src="https://raw.githubusercontent.com/sensuschung/wordpress_image/master/study/NIS2334/image-20240530102430879.png" alt="编译流程" style="zoom: 50%;" /><h2 id="判断"><a href="#判断" class="headerlink" title="判断"></a>判断</h2><ul><li><input disabled="" type="checkbox"> 上面的图中的流程是逻辑关系吗？是执行时间上的先后关系吗？可按照不同的执行流程来组织吗？<ul><li><input disabled="" type="checkbox"> 相关：一遍扫描?多遍扫描？开始和结束？优缺点？</li></ul></li><li><input disabled="" type="checkbox"> 编译程序：复杂系统程序</li></ul><h1 id="词法分析"><a href="#词法分析" class="headerlink" title="词法分析"></a>词法分析</h1><h2 id="字母表和符号串"><a href="#字母表和符号串" class="headerlink" title="字母表和符号串"></a>字母表和符号串</h2><ul><li><input disabled="" type="checkbox"> 字母表：含义、个数、类型</li><li><input disabled="" type="checkbox"> 符号&#x2F;字符</li><li><input disabled="" type="checkbox"> 符号串：有穷、特定、空</li><li><input disabled="" type="checkbox"> 运算：符号串（连接、幂运算）集合（乘积、闭包、正闭包）</li></ul><h2 id="文法和语言"><a href="#文法和语言" class="headerlink" title="文法和语言"></a>文法和语言</h2><ul><li><input disabled="" type="checkbox"> 形式语言、描述方法（枚举、文法）</li><li><input disabled="" type="checkbox"> 规则：终结符与非终结符</li><li><input disabled="" type="checkbox"> 文法：四元组、字汇表、关键、候选式与识别符号</li><li><input disabled="" type="checkbox"> </li></ul><h2 id="判断-1"><a href="#判断-1" class="headerlink" title="判断"></a>判断</h2><ul><li><input disabled="" type="checkbox"> 形式语言考虑语义。</li></ul><h2 id="题型"><a href="#题型" class="headerlink" title="题型"></a>题型</h2><h3 id="文法的设计"><a href="#文法的设计" class="headerlink" title="文法的设计"></a>文法的设计</h3><ol><li><p>根据字母表设计文法</p><blockquote><p>相同的幂必须合并在一起</p></blockquote></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> study </category>
+          
+          <category> class </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> review </tag>
+            
+            <tag> 2023-2024Spring </tag>
+            
+            <tag> compiling </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="/2024/05/26/hello-world/"/>
       <url>/2024/05/26/hello-world/</url>
